@@ -2,23 +2,38 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 body {
     font-family: Arial, sans-serif;
     background: #fff;
     color: #000;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    overflow: hidden;
+    -webkit-text-size-adjust: 100%;
 }
 
 .screen {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
-/* Login Screen */
 .login-container {
     text-align: center;
     width: 90%;
@@ -41,6 +56,7 @@ body {
     font-size: 16px;
     border: 1px solid #000;
     margin-bottom: 10px;
+    -webkit-appearance: none;
 }
 
 #joinBtn {
@@ -51,15 +67,19 @@ body {
     color: #fff;
     border: none;
     cursor: pointer;
+    -webkit-appearance: none;
+    touch-action: manipulation;
 }
 
-/* Chat Screen */
 .chat-container {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background: #fff;
     display: flex;
     flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 .chat-header {
@@ -69,6 +89,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-shrink: 0;
 }
 
 .chat-header h2 {
@@ -89,6 +110,8 @@ body {
     border: 1px solid #fff;
     padding: 5px 10px;
     cursor: pointer;
+    -webkit-appearance: none;
+    touch-action: manipulation;
 }
 
 .online-users {
@@ -96,13 +119,17 @@ body {
     background: #f0f0f0;
     border-bottom: 1px solid #000;
     font-size: 12px;
+    flex-shrink: 0;
 }
 
 .message-area {
     flex: 1;
     overflow-y: auto;
+    overflow-x: hidden;
     padding: 10px;
     background: #fff;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
 }
 
 .message {
@@ -110,6 +137,7 @@ body {
     padding: 8px;
     border: 1px solid #000;
     max-width: 70%;
+    word-wrap: break-word;
 }
 
 .message.system {
@@ -120,63 +148,51 @@ body {
     font-style: italic;
 }
 
-.message.other {
-    background: #fff;
-}
-
-.message.self {
-    background: #000;
-    color: #fff;
-    margin-left: auto;
-}
-
-.message-sender {
+.message-username {
     font-weight: bold;
-    font-size: 11px;
-    margin-bottom: 3px;
+    margin-bottom: 4px;
+    font-size: 14px;
 }
 
 .message-text {
     font-size: 14px;
 }
 
-.message-time {
-    font-size: 10px;
-    margin-top: 3px;
-    opacity: 0.7;
-}
-
 .input-area {
     display: flex;
+    gap: 5px;
     padding: 10px;
     border-top: 1px solid #000;
     background: #fff;
+    flex-shrink: 0;
 }
 
 #messageInput {
     flex: 1;
     padding: 10px;
-    font-size: 14px;
+    font-size: 16px;
     border: 1px solid #000;
-    margin-right: 10px;
+    resize: none;
+    -webkit-appearance: none;
 }
 
 #sendBtn {
     padding: 10px 20px;
+    font-size: 16px;
     background: #000;
     color: #fff;
     border: none;
     cursor: pointer;
+    white-space: nowrap;
+    -webkit-appearance: none;
+    touch-action: manipulation;
 }
 
-.message-area::-webkit-scrollbar {
-    width: 5px;
-}
-
-.message-area::-webkit-scrollbar-track {
+#status {
+    padding: 5px 10px;
+    text-align: center;
+    font-size: 12px;
     background: #f0f0f0;
-}
-
-.message-area::-webkit-scrollbar-thumb {
-    background: #000;
+    border-top: 1px solid #000;
+    flex-shrink: 0;
 }
