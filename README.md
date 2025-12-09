@@ -103,7 +103,7 @@ Hoặc trong VS Code:
 - **Gửi tin nhắn**: Nhập tin nhắn và nhấn "Send" hoặc phím Enter
 - **Xem người dùng online**: Danh sách hiển thị ở đầu trang
 - **Tin nhắn hệ thống**: Thông báo khi có người tham gia/rời khỏi
-- **Thoát**: Nhấn nút "Exit" để rời phỏng chat
+- **Thoát**: Nhấn nút "Exit" để rời phòng chat
 
 ## 🔧 Cấu hình
 
@@ -222,7 +222,7 @@ ESP32CHATTINGROOM/
 
 ### WebSocket không kết nối được
 
-**Nguyên nhân**: Client không reach được ESP32 hoặc lỗi CORS
+**Nguyên nhân**: Client không kết nối được đến ESP32 hoặc lỗi CORS
 
 **Giải pháp**:
 - Kiểm tra đã kết nối đúng WiFi `ESP32Chat` chưa
