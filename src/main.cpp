@@ -8,7 +8,7 @@
 #include "esp_bt.h"
 
 const char* ssid = "ESP32Chat";
-const char* password = "";
+const char* password = "12341234";
 
 AsyncWebServer server(80);
 AsyncWebSocket ws("/ws");
@@ -103,14 +103,14 @@ void initWiFi() {
   delay(100);
   WiFi.setSleep(false);
   WiFi.persistent(true);
-  WiFi.setTxPower(WIFI_POWER_8_5dBm);
+  WiFi.setTxPower(WIFI_POWER_11dBm);
   
   IPAddress local_IP(192, 168, 4, 1);
   IPAddress gateway(192, 168, 4, 1);
   IPAddress subnet(255, 255, 255, 0);
   
   WiFi.softAPConfig(local_IP, gateway, subnet);
-  WiFi.softAP(ssid, password, 1, false, 4);
+  WiFi.softAP(ssid, password, 1, false, 10);
   delay(500);
 }
 
