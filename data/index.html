@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32 Chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="loginScreen" class="screen">
+        <div class="login-container">
+            <h1>ESP32 Chat</h1>
+            <div class="login-box">
+                <input type="text" id="usernameInput" placeholder="Your name" maxlength="20">
+                <button id="joinBtn" onclick="joinChat()">Join</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="chatScreen" class="screen" style="display: none;">
+        <div class="chat-container">
+            <div class="chat-header">
+                <h2>Chat Room</h2>
+                <div class="user-info">
+                    <span id="currentUser"></span>
+                    <button onclick="leaveChat()" class="leave-btn">Exit</button>
+                </div>
+            </div>
+            
+            <div id="onlineUsers" class="online-users">
+                <strong>Online:</strong> <span id="userList">0</span>
+            </div>
+            
+            <div id="messageArea" class="message-area"></div>
+            
+            <div class="input-area">
+                <input type="text" id="messageInput" placeholder="Message..." maxlength="200">
+                <button id="sendBtn" onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
